@@ -1,6 +1,9 @@
 <?php
 
+include_once '../../config/Database.php';
+
 class Author 
+
 {
 //DB stuff
     private $conn;
