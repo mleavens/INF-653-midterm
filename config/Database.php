@@ -13,7 +13,7 @@ class Database {
 
         $hostname = $dbparts['host'];
         $username = $dbparts['user'];
-        $password = $dbparts['PASSWORD'];
+        $password = $dbparts['pass'];
         $database = ltrim($dbparts['path'], '/');
 
         try {
