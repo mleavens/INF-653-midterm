@@ -11,10 +11,10 @@ class Database {
         $url = getenv('JAWSDB_URL');
         $dbparts = parse_url($url);
 
-        $hostname = $getenv('host');
-        $username = $getenv('user');
-        $password = $getenv('pass');
-        $database = $getenv('path');
+        $hostname = getenv('host');
+        $username = getenv('user');
+        $password = getenv('pass');
+        $database = getenv('path');
 
         try {
             $conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
