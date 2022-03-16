@@ -22,7 +22,7 @@ class Author
             id DESC';
 
 //prepare query
-$stmt = $this->conn->prepare($query);
+$stmt = $conn->prepare($query);
 // Execute query
 $stmt->execute();
 
