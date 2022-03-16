@@ -8,7 +8,7 @@ class Database {
     private $conn;
 
     public function connect(){
-        $this->conn = 'null';
+        $this->conn = null;
         $url = getenv('JAWSDB_URL');
         $dbparts = parse_url($url);
 
@@ -26,7 +26,8 @@ class Database {
         catch(PDOException $e)
         {
             echo "Connection failed: " . $e->getMessage();
-        }
+        } 
+        return $this->conn;
 }
 
 }
