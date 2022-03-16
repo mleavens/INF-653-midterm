@@ -8,14 +8,13 @@ class Database {
     private $conn;
 
     public function connect(){
-        $this->conn = null;
         $url = getenv('JAWSDB_URL');
         $dbparts = parse_url($url);
 
-        $hostname = $dbparts['host'];
-        $username = $dbparts['user'];
-        $password = $dbparts['pass'];
-        $database = ltrim($dbparts['path'], '/');
+        $hostname = $getenv('host');
+        $username = $getenv('user');
+        $password = $getenv('pass');
+        $database = $getenv('path');
 
         try {
             $conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
@@ -27,7 +26,6 @@ class Database {
         {
             echo "Connection failed: " . $e->getMessage();
         } 
-        return $this->conn;
 }
 
 }
