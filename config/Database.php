@@ -6,7 +6,7 @@
 
         public function __construct() {
             $this->conn = null;
-            $this->url = getenv('JAWSDB_MARIA_URL');
+            $this->url = getenv('JAWSDB_URL');
         }
 
         public function connect() {
