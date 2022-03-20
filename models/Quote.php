@@ -115,7 +115,33 @@ public function create() {
 
 
 //UPDATE
+public function update() {
+    $query = 'UPDATE ' . $this->table . '
+        SET
+            quote = :quote,
+            id = :id
+        WHERE
+            id = :id';
+    //Prepare statment
+    $stmt = $this->conn->prepare($query);
 
+    //clean data
+    $this->quote= htmlspecialchars(strip_tags($this->quote));
+    $this->id = htmlspecialchars(strip_tags($this->id));
+
+    //bind data
+    $stmt->bindParam(':quote', $this->quote);
+    $stmt->bindParam(':id', $this->id);
+
+    //execute query
+    if($stmt->execute()) {
+        return true;
+    }else{
+        //print error if something goes wrong
+        printf('Error: %s.\n', $stmt->error);
+        return false;
+    }
+}
 
 //DELETE
 public function delete(){
