@@ -32,3 +32,6 @@ if($quote->update()){
         array('message'=>'Post not updated')
     );
 }
+
+exit();
+?>

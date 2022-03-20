@@ -41,5 +41,5 @@ if ($num > 0 ){
         array('message' => 'No categories found')
     );
 }
-
+exit();
 ?>

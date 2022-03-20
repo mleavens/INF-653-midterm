@@ -25,3 +25,5 @@ if($author->delete()){
         array('message'=>'Author not deleted')
     );
 }
+
+exit();

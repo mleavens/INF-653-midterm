@@ -25,3 +25,6 @@ if($category->delete()){
         array('message'=>'Category not deleted')
     );
 }
+
+exit();
+?>

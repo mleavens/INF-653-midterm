@@ -28,3 +28,7 @@ if($quote->create()){
         array('message'=>'Quote not created')
     );
 }
+
+exit();
+
+?>

@@ -29,3 +29,6 @@ if($author->update()){
         array('message'=>'Post not updated')
     );
 }
+
+exit();
+?>

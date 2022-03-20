@@ -21,4 +21,5 @@ $quote_arr = array(
 
 print_r(stripslashes(json_encode($quote_arr)));
 
+exit();
 ?>

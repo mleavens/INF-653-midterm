@@ -27,3 +27,6 @@ if($category->create()){
         array('message'=>'Category not created')
     );
 }
+
+exit();
+?>

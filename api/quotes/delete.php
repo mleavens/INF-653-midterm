@@ -25,3 +25,6 @@ if($quote->delete()){
         array('message'=>'Quote not deleted')
     );
 }
+
+exit();
+?>

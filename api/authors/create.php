@@ -27,3 +27,7 @@ if($author->create()){
         array('message'=>'Author not created')
     );
 }
+
+exit();
+
+?>

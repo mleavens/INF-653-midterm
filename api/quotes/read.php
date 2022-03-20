@@ -34,5 +34,5 @@ if($num > 0){
             array('message' => 'No Quotes Found')
         );
     }
-
+    exit();
 ?>

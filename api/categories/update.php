@@ -29,3 +29,6 @@ if($category->update()){
         array('message'=>'Post not updated')
     );
 }
+
+exit();
+?>

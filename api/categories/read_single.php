@@ -18,4 +18,5 @@ $category_arr = array(
 
 
 print_r(json_encode($category_arr));
+exit();
 ?>
