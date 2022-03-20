@@ -20,7 +20,6 @@ $num = $result->rowCount();
 if ($num > 0 ){
     //author array
     $authors_arr = array();
-    $authors_array['data'] = array();
 
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
         extract($row);
@@ -31,11 +30,11 @@ if ($num > 0 ){
         );
     
     //push to data
-    array_push($authors_array['data'], $author_item);
+    array_push($authors_arr, $author_item);
     }
 
     //Turn to JSON & output
-    echo stripslashes(json_encode($authors_array));
+    echo stripslashes(json_encode($authors_arr));
 }else{
     //No posts
     echo json_encode(
