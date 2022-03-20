@@ -53,35 +53,32 @@ return $stmt;
     }
 
 //CREATE
-    public function create() {
-        $query = 'INSERT INTO ' . $this->table . '
-            SET
-                author = :author,
-                id = :id';
-        //Prepare statment
-        $stmt = $this->conn->prepare($query);
-    
+public function create() {
+    $query = 'INSERT INTO ' . $this->table . '
+        SET
+            author = :author,
+            id = :id';
+    //Prepare statment
+    $stmt = $this->conn->prepare($query);
 
-        //clean data
-        $this->author = htmlspecialchars(strip_tags($this->author));
-        $this->id = htmlspecialchars(strip_tags($this->id));
+    //clean data
+    $this->author = htmlspecialchars(strip_tags($this->author));
+    $this->id = htmlspecialchars(strip_tags($this->id));
 
-        //bind data
-        $stmt->bindParam(':author', $this->author);
-        $stmt->bindParam(':id', $this->id);
+    //bind data
+    $stmt->bindParam(':author', $this->author);
+    $stmt->bindParam(':id', $this->id);
 
-        //execute query
-
-        if($stmt->execute()) {
-            $id = $this->conn->lastInsertId();
-            return true;
-        }else{
-            //print error if something goes wrong
-            printf('Error: %s.\n', $stmt->error);
-            return false;
-        }
+    //execute query
+    if($stmt->execute()) {
+        $id = $this->conn->lastInsertId();
+        return true;
+    }else{
+        //print error if something goes wrong
+        printf('Error: %s.\n', $stmt->error);
+        return false;
     }
-
+}
 
 //UPDATE
 public function update() {
