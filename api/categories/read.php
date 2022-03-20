@@ -19,7 +19,7 @@ $num = $result->rowCount();
 if ($num > 0 ){
     //category array
     $categories_arr = array();
-    $categories_array['data'] = array();
+
 
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
         extract($row);
@@ -30,11 +30,11 @@ if ($num > 0 ){
         );
     
     //push to data
-    array_push($categories_array['data'], $category_item);
+    array_push($categories_arr, $category_item);
     }
 
     //Turn to JSON & output
-    echo stripslashes(json_encode($categories_array));
+    echo stripslashes(json_encode($categories_arr));
 }else{
     //No posts
     echo json_encode(
