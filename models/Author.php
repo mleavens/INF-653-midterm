@@ -73,8 +73,11 @@ return $stmt;
         //execute query
 
         if($stmt->execute()) {
-            $id = $this->conn->lastInsertId();
-            return true;
+            $author_arr = array(
+            'id' = $this->conn->lastInsertId(),
+            'author' = $this->author
+            )
+            return $author_array;
         }else{
             //print error if something goes wrong
             printf('Error: %s.\n', $stmt->error);
