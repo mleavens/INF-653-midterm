@@ -120,8 +120,8 @@ public function update() {
         SET
             quote = :quote,
             id = :id,
-            author = :author,
-            category = :category
+            authorId = :authorId,
+            categoryId = :categoryId
         WHERE
             id = :id';
     //Prepare statment
@@ -130,14 +130,14 @@ public function update() {
     //clean data
     $this->quote= htmlspecialchars(strip_tags($this->quote));
     $this->id = htmlspecialchars(strip_tags($this->id));
-    $this->author = htmlspecialchars(strip_tags($this->author));
-    $this->category = htmlspecialchars(strip_tags($this->category));
+    $this->authorId = htmlspecialchars(strip_tags($this->authorId));
+    $this->categoryId = htmlspecialchars(strip_tags($this->categoryId));
 
     //bind data
     $stmt->bindParam(':quote', $this->quote);
     $stmt->bindParam(':id', $this->id);
-    $stmt->bindParam(':author', $this->author);
-    $stmt->bindParam(':category', $this->category);
+    $stmt->bindParam(':authorId', $this->authorId);
+    $stmt->bindParam(':categoryId', $this->categoryId);
 
     //execute query
     if($stmt->execute()) {

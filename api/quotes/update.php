@@ -18,8 +18,8 @@ $quote->id = $data->id;
 
 $quote->quote = $data->quote;
 $quote->id = $data->id;
-$quote->author = $data->author;
-$quote->category = $data->category;
+$quote->authorId = $data->authorId;
+$quote->categoryId = $data->categoryId;
 
 
 //update post
