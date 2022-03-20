@@ -74,10 +74,10 @@ return $stmt;
 
         if($stmt->execute()) {
             $author_arr = array(
-            'id' = $this->conn->lastInsertId(),
-            'author' = $this->author
-            )
-            return $author_array;
+                'id' => $this->conn->lastInsertId(), 
+                'author' => $this->author
+            );
+            return $author_arr;
         }else{
             //print error if something goes wrong
             printf('Error: %s.\n', $stmt->error);
