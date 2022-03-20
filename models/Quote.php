@@ -119,7 +119,9 @@ public function update() {
     $query = 'UPDATE ' . $this->table . '
         SET
             quote = :quote,
-            id = :id
+            id = :id,
+            author = :author,
+            category = :category
         WHERE
             id = :id';
     //Prepare statment
@@ -128,10 +130,14 @@ public function update() {
     //clean data
     $this->quote= htmlspecialchars(strip_tags($this->quote));
     $this->id = htmlspecialchars(strip_tags($this->id));
+    $this->author = htmlspecialchars(strip_tags($this->author));
+    $this->category = htmlspecialchars(strip_tags($this->category));
 
     //bind data
     $stmt->bindParam(':quote', $this->quote);
     $stmt->bindParam(':id', $this->id);
+    $stmt->bindParam(':author', $this->author);
+    $stmt->bindParam(':category', $this->category);
 
     //execute query
     if($stmt->execute()) {
