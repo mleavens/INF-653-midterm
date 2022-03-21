@@ -6,9 +6,12 @@ $database = new Database();
 $db = $database->connect();
 
 //instantiate author object
+$authorExists = isValid($id, $category);
 $author = new Author($db);
-if ($author->id = isset($_GET['id'])){
+if ($authorExists){
     require_once 'read_single.php'; 
+}elseif(!$authorExists){
+    echo json_encode('message: authorId Not Found');
 };
 
 //author query

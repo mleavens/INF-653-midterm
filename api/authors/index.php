@@ -11,6 +11,8 @@ require_once '../../config/Database.php';
 require_once '../../models/Author.php';
 require_once '../../models/Category.php';
 require_once '../../models/Quote.php';
+require_once '../../function/isValid.php';
+
 
 if($method === 'GET'){
     require_once 'read.php';
