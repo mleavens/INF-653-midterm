@@ -9,11 +9,18 @@ $author = new Author($db);
 //get raw posted data
 $data = json_decode(file_get_contents('php://input'));
 
-//Set ID to update
+//Set ID to delete
 $author->id = $data->id;
 
-//Update post
-$result = $author->delete();
-echo json_encode($result);
 
+//Delete post
+if($author->id !== null) {
+    echo json_encode(
+        array('id' =>  $author->id));
+} 
+else {
+    echo json_encode(
+        array('message' => 'authorId Not Found') 
+    );
+}
 exit();
