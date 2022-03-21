@@ -86,7 +86,7 @@ public function create() {
 public function update() {
     $query = 'UPDATE ' . $this->table . '
         SET
-            category = :author,
+            author = :author,
             id = :id
         WHERE
             id = :id';
