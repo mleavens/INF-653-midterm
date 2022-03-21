@@ -20,10 +20,8 @@ $author->author = $data->author;
 $author->id = $data->id;
 
 //Update post
-    echo json_encode(
         $result = $author->update();
         echo json_encode($result);
-    );
 
 exit();
 ?>
