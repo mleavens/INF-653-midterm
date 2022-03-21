@@ -20,9 +20,9 @@ $quote->categoryId = $data->categoryId;
 if($quote->id !== null) {
     echo json_encode(
         array('id' =>  $quote->id,
-            'quote' => $quote->quote,));
-            'authorId' => $quote->authorId,));
-            'categoryId' => $quote->categoryId,));
+            'quote' => $quote->quote,);
+            'authorId' => $quote->authorId,;
+            'categoryId' => $quote->categoryId));
 } else {
     echo json_encode(
         array('message' => 'Missing Required Parameters') 
