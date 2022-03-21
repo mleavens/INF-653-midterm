@@ -56,8 +56,7 @@ return $stmt;
 public function create() {
     $query = 'INSERT INTO ' . $this->table . '
         SET
-            author = :author,
-            id = :id';
+            author = :author';
     //Prepare statment
     $stmt = $this->conn->prepare($query);
 
@@ -70,14 +69,21 @@ public function create() {
     $stmt->bindParam(':id', $this->id);
 
     //execute query
-    if($stmt->execute()) {
-        $id = $this->conn->lastInsertId();
-        return true;
-    }else{
-        //print error if something goes wrong
-        printf('Error: %s.\n', $stmt->error);
-        return false;
-    }
+    $stmt->execute();
+    $category_arr = array(
+        'id' => $this->conn->lastInsertId(), 
+        'category' => $this->category
+    );
+    return $category_arr;
+
+    // if( $stmt->execute()) {
+    //     $id = $this->conn->lastInsertId();
+    //     return true;
+    // }else{
+    //     //print error if something goes wrong
+    //     printf('Error: %s.\n', $stmt->error);
+    //     return false;
+    // }
 }
 
 //UPDATE
