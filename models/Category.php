@@ -116,7 +116,7 @@ public function update() {
         return false;
     }
 }
-}
+
 
 //DELETE
 public function delete(){
