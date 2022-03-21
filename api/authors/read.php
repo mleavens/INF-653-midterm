@@ -1,5 +1,6 @@
 <?php
 
+require_once '../../function/isValid.php';
 
 //instantiate DB & connect
 $database = new Database();
