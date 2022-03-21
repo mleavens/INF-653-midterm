@@ -18,7 +18,7 @@ $author->id = $data->id;
 if($author->id !== null) {
     echo json_encode(
         array('id' => $db->lastInsertId(),
-            'author' => $author->id));
+            'author' => $author->author));
 } else {
     echo json_encode(
         array('message' => 'Missing Required Parameters') 

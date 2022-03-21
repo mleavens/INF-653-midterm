@@ -17,7 +17,7 @@ $category->id = $data->id;
 if($category->id !== null) {
     echo json_encode(
         array('id' => $db->lastInsertId(),
-            'category' => $category->id));
+            'category' => $category->category));
 } else {
     echo json_encode(
         array('message' => 'Missing Required Parameters') 
