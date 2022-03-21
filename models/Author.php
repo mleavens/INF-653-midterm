@@ -49,6 +49,7 @@ return $stmt;
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         //set properties
+        $this->id = $row['id'];
         $this->author = $row['author'];
         return $stmt;
     }
