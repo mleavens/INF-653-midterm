@@ -13,8 +13,17 @@ $data = json_decode(file_get_contents('php://input'));
 $quote->id = $data->id;
 
 //Update post
-$result = $quote->delete();
-echo json_encode($result);
+if($quote->id !== null) {
+    $result = $quote->delete();
+    echo json_encode($result);
+
+} 
+else {
+    echo json_encode(
+        array('message' => 'No Quotes Found') 
+    );
+}
+
 
 exit();
 ?>

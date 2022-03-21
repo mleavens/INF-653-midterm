@@ -4,6 +4,7 @@ $database = new Database();
 $db = $database->connect();
 
 $quote = new Quote($db);
+
 if ($quote->id = isset($_GET['id'])){
     require_once 'read_single.php'; 
 };
