@@ -12,12 +12,11 @@ $data = json_decode(file_get_contents('php://input'));
 //Set ID to update
 $quote->id = $data->id;
 
-//Update post
+//Delete post
 if($quote->id !== null) {
     echo json_encode(
         array('id' =>  $quote->id));
-} 
-else {
+} else {
     echo json_encode(
         array('message' => 'No Quotes Found') 
     );

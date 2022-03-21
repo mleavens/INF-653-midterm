@@ -16,9 +16,8 @@ $author->id = $data->id;
 
 //create post
 if($author->id !== null) {
-    echo json_encode(
-        array('id' => $db->lastInsertId(),
-            'author' => $author->author));
+    $result = $category->create();
+    echo json_encode($result);
 } else {
     echo json_encode(
         array('message' => 'Missing Required Parameters') 
