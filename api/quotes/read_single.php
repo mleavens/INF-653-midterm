@@ -16,8 +16,10 @@ $quote_arr = array(
     'category'=>$quote->category
 );
 
-
+if (isset($_GET['id']) !== $quote->id){
+    echo('message: ‘No Quotes Found’');
+}else{
 print_r(stripslashes(json_encode($quote_arr)));
-
+}
 exit();
 ?>
