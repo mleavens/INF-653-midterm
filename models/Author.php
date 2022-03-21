@@ -68,21 +68,18 @@ public function create() {
     $stmt->bindParam(':author', $this->author);
 
     //execute query
-    $stmt->execute();
-    $author_arr = array(
-        'id' => $this->conn->lastInsertId(), 
-        'author' => $this->author
-    );
-    return $author_arr;
 
-    // if( $stmt->execute()) {
-    //     $id = $this->conn->lastInsertId();
-    //     return true;
-    // }else{
-    //     //print error if something goes wrong
-    //     printf('Error: %s.\n', $stmt->error);
-    //     return false;
-    // }
+    if($stmt->execute()) {
+        $author_arr = array(
+            'id' => $this->conn->lastInsertId(), 
+            'author' => $this->author
+        );
+        return $author_arr;
+    }else{
+        //print error if something goes wrong
+        printf('Error: %s.\n', $stmt->error);
+        return false;
+    }
 }
 
 //UPDATE
