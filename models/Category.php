@@ -105,12 +105,17 @@ public function update() {
 
     //execute query
     if($stmt->execute()) {
-        return true;
+        $category_arr = array(
+            'id' => $this->id, 
+            'category' => $this->category
+        );
+        return $category_arr;
     }else{
         //print error if something goes wrong
         printf('Error: %s.\n', $stmt->error);
         return false;
     }
+}
 }
 
 //DELETE

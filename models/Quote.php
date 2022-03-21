@@ -143,7 +143,13 @@ public function update() {
 
     //execute query
     if($stmt->execute()) {
-        return true;
+        $quote_arr = array(
+            'id' => $this->id,
+            'quote' => $this->quote,
+            'authorId' => $this->authorId,
+            'categoryId' => $this->categoryId
+        );
+        return $quote_arr;
     }else{
         //print error if something goes wrong
         printf('Error: %s.\n', $stmt->error);
