@@ -17,18 +17,17 @@ $quote->authorId = $data->authorId;
 $quote->categoryId = $data->categoryId;
 
 //create post
-$result = $quote->create();
-if($quote->authorId !== null && $quote->categoryId !== null && $quote->id !== null){
-    echo json_encode($result);
-}elseif($quote->authorId === null){
+if($quote->id !== null) {
     echo json_encode(
-        array('message' => 'authorId Not Found'));
-}else if($quote->categoryId === null){
+        array('id' =>  $quote->id,
+            'quote' => $quote->quote,));
+            'authorId' => $quote->authorId,));
+            'categoryId' => $quote->categoryId,));
+} else {
     echo json_encode(
-        array('message' => 'categoryId Not Found'));
+        array('message' => 'Missing Required Parameters') 
+    );
 }
-$result = $quote->create();
-echo json_encode($result);
 
 exit();
 
