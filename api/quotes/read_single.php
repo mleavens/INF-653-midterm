@@ -16,7 +16,15 @@ $quote_arr = array(
     'category'=>$quote->category
 );
 
-print_r(stripslashes(json_encode($quote_arr)));
+if($quote->id !== null) {
+    echo(json_encode($quote_arr));
+    } 
+    else {
+        echo json_encode(
+            array('message' => 'quoteId Not Found')
+        );
+    }
+
 
 exit();
 ?>

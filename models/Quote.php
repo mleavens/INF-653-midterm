@@ -74,6 +74,7 @@ return $stmt;
         $this->category = $row['category'];
         $this->author = $row['author'];
         $this->quote = $row['quote'];
+        $this->id = $row['id'];
 
 
     }
