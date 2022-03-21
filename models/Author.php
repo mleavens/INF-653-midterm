@@ -63,11 +63,9 @@ public function create() {
 
     //clean data
     $this->author = htmlspecialchars(strip_tags($this->author));
-    $this->id = htmlspecialchars(strip_tags($this->id));
 
     //bind data
     $stmt->bindParam(':author', $this->author);
-    $stmt->bindParam(':id', $this->id);
 
     //execute query
     $stmt->execute();
