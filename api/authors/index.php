@@ -8,7 +8,7 @@ if ($method === 'OPTIONS') {
     header('Access-Control-Allow-Headers: Origin, Accept, Content-Type, X-Requested-With');
 }elseif($method === 'GET'){
     require_once 'read.php';
-    require_once 'read_single.php';
+    include_once 'read_single.php';
 }elseif($method === 'POST'){
     require_once 'create.php';
 }elseif($method === 'PUT'){
