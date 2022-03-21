@@ -18,7 +18,8 @@ $author->id = $data->id;
 //create post
 if($author->id !== null) {
     echo json_encode(
-        array('id' =>  $author->id));
+        array('id' =>  $author->id,
+                'author' => $author->author));
 } 
 else {
     echo json_encode(
