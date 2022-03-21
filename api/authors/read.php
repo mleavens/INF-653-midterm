@@ -6,7 +6,7 @@ $database = new Database();
 $db = $database->connect();
 
 //instantiate author object
-$authorExists = isValid($id, $category);
+$authorExists = isValid($id, $author);
 $author = new Author($db);
 if ($authorExists){
     require_once 'read_single.php'; 
