@@ -19,15 +19,8 @@ $quote->authorId = $data->authorId;
 $quote->categoryId = $data->categoryId;
 
 //create post
-if($quote->create()){
-    echo json_encode(
-        array('message' => 'Quote created')
-    );
-} else {
-    echo json_encode(
-        array('message'=>'Quote not created')
-    );
-}
+$result = $quote->create();
+echo json_encode($result);
 
 exit();
 

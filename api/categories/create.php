@@ -18,15 +18,8 @@ $category->category = $data->category;
 $category->id = $data->id;
 
 //create post\
-if($category->create()){
-    echo json_encode(
-        array('message' => 'Category created')
-    );
-} else {
-    echo json_encode(
-        array('message'=>'Category not created')
-    );
-}
+$result = $category->create();
+echo json_encode($result);
 
 exit();
 ?>
