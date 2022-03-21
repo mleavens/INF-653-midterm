@@ -1,17 +1,16 @@
 <?php
- if ($id){
-    require_once 'read_single.php'; 
- };
-
 
 //instantiate DB & connect
 $database = new Database();
 $db = $database->connect();
 
-//instantiate author object
+//instantiate category object
 $category = new Category($db);
+if ($category->id = isset($_GET['id'])){
+    require_once 'read_single.php'; 
+};
 
-//author query
+//category query
 $result = $category->read();
 //get row count
 $num = $result->rowCount();
