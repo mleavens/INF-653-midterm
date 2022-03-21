@@ -14,9 +14,17 @@ $data = json_decode(file_get_contents('php://input'));
 $author->author = $data->author;
 $author->id = $data->id;
 
+
 //create post
-$result = $author->create();
-echo json_encode($result);
+if($author->id !== null) {
+    echo json_encode(
+        array('id' =>  $author->id));
+} 
+else {
+    echo json_encode(
+        array('message' => 'authorId Not Found') 
+    );
+}
 
 
 exit();
