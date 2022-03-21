@@ -20,15 +20,10 @@ $author->author = $data->author;
 $author->id = $data->id;
 
 //Update post
-if($author->update()){
     echo json_encode(
-        array('message' => 'Post updated')
+        $result = $author->update();
+        echo json_encode($result);
     );
-} else {
-    echo json_encode(
-        array('message'=>'Post not updated')
-    );
-}
 
 exit();
 ?>
