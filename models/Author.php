@@ -128,7 +128,7 @@ public function delete(){
 //execute query
 if($stmt->execute()) {
     $author_id = array(
-    'id' => $this->id;
+    'id' => $this->id
     );
     return $author_id;
 }else{
