@@ -16,15 +16,8 @@ $data = json_decode(file_get_contents('php://input'));
 $quote->id = $data->id;
 
 //Update post
-if($quote->delete()){
-    echo json_encode(
-        array('message' => 'Quote deleted')
-    );
-} else {
-    echo json_encode(
-        array('message'=>'Quote not deleted')
-    );
-}
+$result = $quote->delete();
+echo json_encode($result);
 
 exit();
 ?>

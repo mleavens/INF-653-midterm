@@ -16,15 +16,8 @@ $data = json_decode(file_get_contents('php://input'));
 $category->id = $data->id;
 
 //Update post
-if($category->delete()){
-    echo json_encode(
-        array('message' => 'Category deleted')
-    );
-} else {
-    echo json_encode(
-        array('message'=>'Category not deleted')
-    );
-}
+$result = $category->delete();
+echo json_encode($result);
 
 exit();
 ?>
