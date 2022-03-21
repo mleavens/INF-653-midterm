@@ -51,6 +51,8 @@ return $stmt;
 
         //set properties
         $this->category = $row['category'];
+        $this->id = $row['id'];
+        return $stmt;
 
     }
 

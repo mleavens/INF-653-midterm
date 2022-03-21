@@ -15,7 +15,14 @@ $category_arr = array(
     'category'=>$category->category
 );
 
+if($category->id !== null) {
+    echo(json_encode($category_arr));
+    } 
+    else {
+        echo json_encode(
+            array('message' => 'categoryId Not Found')
+        );
+    }
 
-print_r(json_encode($category_arr));
 exit();
 ?>
