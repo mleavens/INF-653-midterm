@@ -9,7 +9,7 @@ $db = $database->connect();
 $author = new Author($db);
 if ($author->id = isset($_GET['id']){
     require_once 'read_single.php'; 
- };
+};
 
 //author query
 $result = $author->read();
