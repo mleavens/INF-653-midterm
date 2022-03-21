@@ -23,7 +23,7 @@ if($author->id !== null) {
 } 
 else {
     echo json_encode(
-        array('message' => 'authorId Not Found') 
+        array('message' => 'Missing Required Parameters') 
     );
 }
 
