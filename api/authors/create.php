@@ -14,12 +14,10 @@ $data = json_decode(file_get_contents('php://input'));
 $author->author = $data->author;
 $author->id = $data->id;
 
-
+$result = $quote->create();
 //create post
 if($author->id !== null) {
-    echo json_encode(
-        array('id' =>  $author->id,
-            'author' => $author->author));
+    echo json_encode($result);
 } else {
     echo json_encode(
         array('message' => 'Missing Required Parameters') 
