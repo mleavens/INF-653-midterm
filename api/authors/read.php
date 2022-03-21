@@ -1,18 +1,13 @@
 <?php
 
-require_once '../../function/isValid.php';
-
 //instantiate DB & connect
 $database = new Database();
 $db = $database->connect();
 
 //instantiate author object
-$authorExists = isValid($id, $author);
 $author = new Author($db);
-if ($authorExists){
+if ($author->id = isset($_GET['id'])){
     require_once 'read_single.php'; 
-}elseif(!$authorExists){
-    echo json_encode('message: authorId Not Found');
 };
 
 //author query
@@ -24,6 +19,7 @@ $num = $result->rowCount();
 if ($num > 0 ){
     //author array
     $authors_arr = array();
+
 
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
         extract($row);
@@ -45,7 +41,5 @@ if ($num > 0 ){
         array('message' => 'No authors found')
     );
 }
-
-
 exit();
 ?>
