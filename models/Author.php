@@ -50,6 +50,7 @@ return $stmt;
 
         //set properties
         $this->author = $row['author'];
+        return $stmt;
     }
 
 //CREATE
