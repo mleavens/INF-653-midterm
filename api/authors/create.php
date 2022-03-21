@@ -18,15 +18,9 @@ $author->author = $data->author;
 $author->id = $data->id;
 
 //create post
+$result = $category->create();
+echo json_encode($result);
 
-if($author->create()){
-    $result = $category->create();
-    echo json_encode($result);
-} else {
-    echo json_encode(
-        array('message'=>'Author not created')
-    );
-}
 
 exit();
 
