@@ -16,14 +16,7 @@ $data = json_decode(file_get_contents('php://input'));
 $author->id = $data->id;
 
 //Update post
-if($author->delete()){
-    echo json_encode(
-        array('message' => 'Author deleted')
-    );
-} else {
-    echo json_encode(
-        array('message'=>'Author not deleted')
-    );
-}
+$result = $author->delete();
+echo json_encode($result);
 
 exit();

@@ -127,7 +127,7 @@ public function delete(){
     
 //execute query
 if($stmt->execute()) {
-    return true;
+    return $this->id;
 }else{
     //print error if something goes wrong
     printf('Error: %s.\n', $stmt->error);
