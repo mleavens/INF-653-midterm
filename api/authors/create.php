@@ -15,14 +15,17 @@ $author->author = $data->author;
 $author->id = $data->id;
 
 //create post
-if($author->id !== null) {
-    $result = $category->create();
-    echo json_encode($result);
-} else {
-    echo json_encode(
-        array('message' => 'Missing Required Parameters') 
-    );
-}
+$result = $category->create();
+echo json_encode($result);
+
+// if($author->id !== null) {
+//     $result = $category->create();
+//     echo json_encode($result);
+// } else {
+//     echo json_encode(
+//         array('message' => 'Missing Required Parameters') 
+//     );
+// }
 
 
 exit();
