@@ -1,9 +1,6 @@
 <?php
 
 
-require_once '../../config/Database.php';
-require_once '../../models/Author.php';
-
 //instantiate DB & connect
 $database = new Database();
 $db = $database->connect();

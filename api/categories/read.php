@@ -4,9 +4,6 @@
  };
 
 
-require_once '../../config/Database.php';
-require_once '../../models/Category.php';
-
 //instantiate DB & connect
 $database = new Database();
 $db = $database->connect();
