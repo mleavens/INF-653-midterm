@@ -14,9 +14,8 @@ $quote->id = $data->id;
 
 //Update post
 if($quote->id !== null) {
-    $result = $quote->delete();
-    echo json_encode($result);
-
+    echo json_encode(
+        array('id' =>  $quote->id));
 } 
 else {
     echo json_encode(
