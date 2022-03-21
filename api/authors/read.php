@@ -1,7 +1,10 @@
 <?php
+ if ($id){
+    require_once 'read_single.php'; 
+ };
 
-include_once '../../config/Database.php';
-include_once '../../models/Author.php';
+require_once '../../config/Database.php';
+require_once '../../models/Author.php';
 
 
 //instantiate DB & connect

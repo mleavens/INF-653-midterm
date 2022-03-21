@@ -1,7 +1,7 @@
 <?php
 
-include_once '../../config/Database.php';
-include_once '../../models/Quote.php';
+require_once '../../config/Database.php';
+require_once '../../models/Quote.php';
 
 //instantiate DB & connect
 $database = new Database();
