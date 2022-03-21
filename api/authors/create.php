@@ -19,9 +19,8 @@ $author->id = $data->id;
 if($author->id !== null) {
     echo json_encode(
         array('id' =>  $author->id,
-                'author' => $author->author));
-} 
-else {
+            'author' => $author->author));
+} else {
     echo json_encode(
         array('message' => 'Missing Required Parameters') 
     );
