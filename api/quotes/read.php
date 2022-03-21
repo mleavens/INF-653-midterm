@@ -1,8 +1,4 @@
 <?php 
-    if ($id){
-    require_once 'read_single.php'; 
-    };
-
 
 $database = new Database();
 $db = $database->connect();
