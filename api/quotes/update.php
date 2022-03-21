@@ -19,9 +19,19 @@ $quote->authorId = $data->authorId;
 $quote->categoryId = $data->categoryId;
 
 
-//update post
-$result = $quote->update();
-echo json_encode($result);
-
+//update quote
+if($quote->update()) {
+    echo json_encode(
+        array('id' => $quote->id,
+                'quote' => $quote->quote,
+                'authorId' => $quote->authorId,
+                'categoryId' => $quote->categoryId    
+        )
+    );
+} else {
+    echo json_encode(
+        array('message' => 'No Quotes Found')
+    );
+}
 exit();
 ?>
