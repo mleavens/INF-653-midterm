@@ -83,7 +83,6 @@ public function create() {
     $query = 'INSERT INTO ' . $this->table . '
         SET
             quote = :quote,
-            id = :id,
             categoryId = :categoryId,
             authorId = :authorId
             ';
@@ -92,20 +91,23 @@ public function create() {
 
     //clean data
     $this->categoryId = htmlspecialchars(strip_tags($this->categoryId));
-    $this->id = htmlspecialchars(strip_tags($this->id));
     $this->quote = htmlspecialchars(strip_tags($this->quote));
     $this->authorId = htmlspecialchars(strip_tags($this->authorId));
 
     //bind data
     $stmt->bindParam(':categoryId', $this->categoryId);
-    $stmt->bindParam(':id', $this->id);
     $stmt->bindParam(':quote', $this->quote);
     $stmt->bindParam(':authorId', $this->authorId);
 
     //execute query
     if($stmt->execute()) {
-        $id = $this->conn->lastInsertId();
-        return true;
+        $quote_arr = array(
+            'id' => $this->conn->lastInsertId(),
+            'quote' => $this->quote,
+            'authorId' => $this->authorId,
+            'categoryId' => $this->categoryId
+        );
+        return $quote_arr;
     }else{
         //print error if something goes wrong
         printf('Error: %s.\n', $stmt->error);

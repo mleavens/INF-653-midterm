@@ -59,23 +59,24 @@ return $stmt;
 public function create() {
     $query = 'INSERT INTO ' . $this->table . '
         SET
-            category = :category,
-            id = :id';
+            category = :category';
     //Prepare statment
     $stmt = $this->conn->prepare($query);
 
     //clean data
     $this->category = htmlspecialchars(strip_tags($this->category));
-    $this->id = htmlspecialchars(strip_tags($this->id));
 
     //bind data
     $stmt->bindParam(':category', $this->category);
-    $stmt->bindParam(':id', $this->id);
 
     //execute query
+
     if($stmt->execute()) {
-        $id = $this->conn->lastInsertId();
-        return true;
+        $category_arr = array(
+            'id' => $this->conn->lastInsertId(), 
+            'category' => $this->category
+        );
+        return $category_arr;
     }else{
         //print error if something goes wrong
         printf('Error: %s.\n', $stmt->error);
