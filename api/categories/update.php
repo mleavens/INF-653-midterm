@@ -20,15 +20,8 @@ $category->category = $data->category;
 $category->id = $data->id;
 
 //Update post
-if($category->update()){
-    echo json_encode(
-        array('message' => 'Post updated')
-    );
-} else {
-    echo json_encode(
-        array('message'=>'Post not updated')
-    );
-}
+$result = $category->update();
+echo json_encode($result);
 
 exit();
 ?>

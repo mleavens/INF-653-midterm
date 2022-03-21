@@ -23,15 +23,8 @@ $quote->categoryId = $data->categoryId;
 
 
 //update post
-if($quote->update()){
-    echo json_encode(
-        array('message' => 'Post updated')
-    );
-} else {
-    echo json_encode(
-        array('message'=>'Post not updated')
-    );
-}
+$result = $quote->update();
+echo json_encode($result);
 
 exit();
 ?>
