@@ -71,11 +71,11 @@ public function create() {
 
     //execute query
     $stmt->execute();
-    $category_arr = array(
+    $author_arr = array(
         'id' => $this->conn->lastInsertId(), 
-        'category' => $this->category
+        'author' => $this->author
     );
-    return $category_arr;
+    return $author_arr;
 
     // if( $stmt->execute()) {
     //     $id = $this->conn->lastInsertId();
