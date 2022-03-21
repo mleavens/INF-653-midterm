@@ -16,7 +16,7 @@ $category->id = $data->id;
 //create post
 if($category->id !== null) {
     echo json_encode(
-        array('id' =>  $category->id,
+        array('id' => $db->lastInsertId(),
             'category' => $category->id));
 } else {
     echo json_encode(
