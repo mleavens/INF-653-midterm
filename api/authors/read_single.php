@@ -15,8 +15,10 @@ $author_arr = array(
     'author'=>$author->author
 );
 
-
+if(!$id){
+    echo(json_encode('message: authorId Not Found'))
+}else{
 echo(json_encode($author_arr));
-
+}
 exit();
 ?>
