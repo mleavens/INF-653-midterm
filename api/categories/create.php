@@ -15,7 +15,9 @@ $category->id = $data->id;
 
 //create post
 if($category->id !== null) {
-    echo json_encode($result);
+    echo json_encode(
+        array('id' =>  $category->id,
+            'category' => $category->id));
 } else {
     echo json_encode(
         array('message' => 'Missing Required Parameters') 
