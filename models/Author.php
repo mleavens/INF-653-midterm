@@ -127,7 +127,10 @@ public function delete(){
     
 //execute query
 if($stmt->execute()) {
-    return $this->id;
+    $author_id = array(
+    'id' => $this->id;
+    );
+    return $author_id;
 }else{
     //print error if something goes wrong
     printf('Error: %s.\n', $stmt->error);
