@@ -16,12 +16,12 @@ $quote->id = $data->id;
 $quote->authorId = $data->authorId;
 $quote->categoryId = $data->categoryId;
 
-$isValid = isValid($quote->id, $quote);
+// $isValid = isValid($quote->id, $quote);
 
-//create post
-if(!$isValid){
-    echo json_encode(array('message' => 'Missing Required Parameters'));
-}
+// //create post
+// if(!$isValid){
+//     echo json_encode(array('message' => 'Missing Required Parameters'));
+// }
 
 $result = $quote->create();
 echo json_encode($result);
