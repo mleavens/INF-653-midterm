@@ -25,18 +25,6 @@ $quoteExists = isValid($data->id, $quote);
 
 
 //update quote
-if($quoteExists) {
-   echo json_encode(
-        array('id' => $data->id,
-                'quote' => $data->quote,
-                'authorId' => $data->authorId,
-                'categoryId' => $data->categoryId    
-        )
-    );
-} else {
-    echo json_encode(
-        array('message' => 'No Quotes Found')
-    );
-}
-exit();
+$result = $quote->update();
+echo json_encode($result);
 ?>
