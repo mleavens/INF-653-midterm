@@ -14,17 +14,32 @@ $data = json_decode(file_get_contents('php://input'));
 $author->author = $data->author;
 $author->id = $data->id;
 
+$author_arr = array(
+    'id' => $author->id,
+    'author'=>$author->author
+);
+
+if($author->id !== null) {
+    echo(json_encode($author_arr));
+    } 
+    else {
+        echo json_encode(
+            array('message' => 'authorId Not Found')
+        );
+    }
+
+
 //create post
-$result = $author->create();
+// $result = $author->create();
 
 
-if($result) {
-    echo json_encode($result);
-} else {
-    echo json_encode(
-        array('message' => 'Missing Required Parameters') 
-    );
-};
+// if($result) {
+//     echo json_encode($result);
+// } else {
+//     echo json_encode(
+//         array('message' => 'Missing Required Parameters') 
+//     );
+// };
 
 
 exit();
