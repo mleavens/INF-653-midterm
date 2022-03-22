@@ -11,15 +11,15 @@ $author = new Author($db);
 //get raw posted data
 $data = json_decode(file_get_contents('php://input'));
 
-
-$author->author = $data->author;
-$author->id = $data->id;
-
-if($data->id === null || $data->author === null){
+if($data === null){
     echo json_encode(
         array('message' => 'Missing Required Parameters') 
         );
 }
+
+$author->author = $data->author;
+$author->id = $data->id;
+
 
 $result = $author->create();
 echo json_encode($result);
