@@ -21,14 +21,7 @@ $author->id = $data->id;
 
 //Update post
 
-if($author->id !== null) {
-    $result = $author->update();
-    echo json_encode($result);
-} else {
-    echo json_encode(
-        array('message' => 'Missing Required Parameters') 
-    );
-};
-
+$result = $author->update();
+echo json_encode($result);
 exit();
 ?>

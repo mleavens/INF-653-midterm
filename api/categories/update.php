@@ -21,15 +21,6 @@ $categoryExists = isValid($category->id, $category);
 
 
 //update category
-if($categoryExists) {
-   echo json_encode(
-        array('id' => $category->id,
-            'category' => $category->category    
-        )
-    );
-} elseif (!$data) {
-    echo json_encode(
-        array('message' => 'Missing Required Parameters')
-    );
-}
+$result = $category->update();
+echo json_encode($result);
 ?>
