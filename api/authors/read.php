@@ -1,9 +1,5 @@
 <?php
 
-$idSet = filter_input(INPUT_GET, "id");
-if ($author->id = isset($idSet)){
-    require_once 'read_single.php'; 
-};
 
 
 //instantiate DB & connect
@@ -13,6 +9,11 @@ $db = $database->connect();
 //instantiate author object
 $author = new Author($db);
 
+//check if author id is set
+$idSet = filter_input(INPUT_GET, "id");
+if ($author->id = isset($idSet)){
+    require_once 'read_single.php'; 
+};
 //author query
 $result = $author->read();
 //get row count
