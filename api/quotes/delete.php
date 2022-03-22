@@ -10,7 +10,12 @@ $quote = new Quote($db);
 //get raw posted data
 $data = json_decode(file_get_contents('php://input'));
 
-if(isset($data->quote) && !empty($data->quote)&&isset($data->author) && !empty($data->author) && isset($data->category) && !empty($data->category)){
+$data->id = htmlspecialchars(strip_tags($data->id));
+$data->quote = htmlspecialchars(strip_tags($data->quote));
+$data->categoryId = htmlspecialchars(strip_tags($data->categoryId));
+$data->authorId = htmlspecialchars(strip_tags($data->authorId));
+
+if(isset($data->id) && !empty($data->id) && isset($data->quote) && !empty($data->quote)&&isset($data->authorId) && !empty($data->authorId) && isset($data->categoryId) && !empty($data->categoryId)){
     $result = $quote->delete();
     echo json_encode($result);
 }else {
