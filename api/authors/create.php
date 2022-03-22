@@ -17,7 +17,11 @@ $author->id = $data->id;
 $result = $author->create();
 echo json_encode($result);
 
-
+if($data->id === null){
+    echo json_encode(
+        array('message' => 'Missing Required Parameters') 
+        );
+}
 
 //create post
 // $result = $author->create();
