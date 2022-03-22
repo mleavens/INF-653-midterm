@@ -24,11 +24,11 @@ $quoteExists = isValid($data->id, $quote);
 
 //update quote
 if($quoteExists) {
-    return echo json_encode(
-        array('id' => $quote->id,
-                'quote' => $quote->quote,
-                'authorId' => $quote->authorId,
-                'categoryId' => $quote->categoryId    
+   echo json_encode(
+        array('id' => $data->id,
+                'quote' => $data->quote,
+                'authorId' => $data->authorId,
+                'categoryId' => $data->categoryId    
         )
     );
 } elseif (!$quoteExists) {
