@@ -16,7 +16,7 @@ $quote->id = $data->id;
 $quote->authorId = $data->authorId;
 $quote->categoryId = $data->categoryId;
 
-$isValidAuthor = isValid($quote->authorId, $quote);
+$isValidAuthor = isValid($data->authorId, $quote);
 
 //create post
 if(!$isValidAuthor){
