@@ -15,11 +15,10 @@ $author->author = $data->author;
 $author->id = $data->id;
 
 //create post
-// $result = $category->create();
+$result = $category->create();
 // echo json_encode($result);
 
-if($author->id !== null) {
-    $result = $author->create();
+if($result) {
     echo json_encode($result);
 } else {
     echo json_encode(
