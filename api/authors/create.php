@@ -19,7 +19,7 @@ $author->id = $data->id;
 // echo json_encode($result);
 
 if($author->id !== null) {
-    $result = $category->create();
+    $result = $author->create();
     echo json_encode($result);
 } else {
     echo json_encode(

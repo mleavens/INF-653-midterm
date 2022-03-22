@@ -18,18 +18,17 @@ $author->author = $data->author;
 $author->id = $data->id;
 
 
-$authorExists = isValid($author->id, $author);
 
 //Update post
-if($authorExists) {
-    echo json_encode(
-        array('id' => $author->id,
-            'author' => $author->author));
+
+if($author->id !== null) {
+    $result = $author->update();
+    echo json_encode($result);
 } else {
     echo json_encode(
         array('message' => 'Missing Required Parameters') 
     );
-}
+};
 
 exit();
 ?>
