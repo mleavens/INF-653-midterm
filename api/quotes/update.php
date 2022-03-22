@@ -1,4 +1,5 @@
 <?php
+require_once '../../function/isValid.php';
 
 //instantiate DB & connect
 $database = new Database();
@@ -18,9 +19,11 @@ $quote->id = $data->id;
 $quote->authorId = $data->authorId;
 $quote->categoryId = $data->categoryId;
 
+$quoteExists = isValid($data->id, $quote);
+
 
 //update quote
-if($quote->update()) {
+if($quoteExists) {
     echo json_encode(
         array('id' => $quote->id,
                 'quote' => $quote->quote,
@@ -28,9 +31,9 @@ if($quote->update()) {
                 'categoryId' => $quote->categoryId    
         )
     );
-} elseif (!isset($quote->categoryId)) {
+} elseif (!$quoteExists) {
     echo json_encode(
-        array('message' => 'categoryId Not found')
+        array('message' => 'No Quotes Found')
     );
 }
 exit();
