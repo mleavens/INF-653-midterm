@@ -16,7 +16,7 @@ $quote_arr = array(
     'category'=>$quote->categoryId
 );
 
-if(isset($quote->authorId)){
+if(isset(htmlspecialchars(strip_tags$quote->authorId))){
     echo json_encode(
         array('author'=>$quote->authorId,
     ));
