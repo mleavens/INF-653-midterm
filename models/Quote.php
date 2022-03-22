@@ -100,7 +100,7 @@ public function create() {
     $stmt->bindParam(':categoryId', $this->categoryId);
     $stmt->bindParam(':quote', $this->quote);
     $stmt->bindParam(':authorId', $this->authorId);
-    $stmt->bindParam(':id' => $this->conn->lastInsertId());
+    $stmt->bindParam(':id', => $this->conn->lastInsertId());
 
     //execute query
     if($stmt->execute()) {
