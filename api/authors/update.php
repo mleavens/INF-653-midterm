@@ -20,7 +20,6 @@ $author->id = $data->id;
 //check if author exists
 $authorExists = isValid($author->id, $author);
 
-echo $authorExists;
 
 //Update post
 $result = $author->update();
