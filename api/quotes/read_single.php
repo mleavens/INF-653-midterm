@@ -19,6 +19,7 @@ $quote_arr = array(
 if(isset(htmlspecialchars(strip_tags$quote->authorId))){
     echo json_encode(
         array('author'=>$quote->authorId,
+                'quote'=> $quote->quote
     ));
 }
 
