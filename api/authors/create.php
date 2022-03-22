@@ -11,7 +11,7 @@ $author = new Author($db);
 //get raw posted data
 $data = json_decode(file_get_contents('php://input'));
 
-if($data === null){
+if($data->author === null){
     echo json_encode(
         array('message' => 'Missing Required Parameters') 
         );
