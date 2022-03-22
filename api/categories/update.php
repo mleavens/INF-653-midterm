@@ -16,15 +16,20 @@ $category->id = $data->id;
 $category->category = $data->category;
 $category->id = $data->id;
 
-//Update post
-if($category->id !== null) {
-    echo json_encode(
+//check if quote exists
+$categoryExists = isValid($data->id, $category);
+
+
+//update category
+if($categoryExists) {
+   echo json_encode(
         array('id' => $category->id,
-            'category' => $category->category));
-} else {
+            'category' => $category->category    
+        )
+    );
+} elseif (!$categoryExists) {
     echo json_encode(
-        array('message' => 'Missing Required Parameters') 
+        array('message' => 'Missing Required Parameters')
     );
 }
-exit();
 ?>

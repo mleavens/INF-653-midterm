@@ -19,6 +19,7 @@ $quote->id = $data->id;
 $quote->authorId = $data->authorId;
 $quote->categoryId = $data->categoryId;
 
+//check if quote exists
 $quoteExists = isValid($data->id, $quote);
 
 
