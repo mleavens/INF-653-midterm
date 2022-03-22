@@ -76,11 +76,10 @@ public function create() {
             'author' => $this->author
         );
         return $author_arr;
-    }else{
-        //print error if something goes wrong
-        printf('Error: %s.\n', $stmt->error);
-        return false;
-    }
+    }else {
+        echo json_encode(
+            array('message' => 'Missing Required Parameters') 
+        );
 }
 
 //UPDATE
