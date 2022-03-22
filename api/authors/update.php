@@ -18,7 +18,7 @@ $author->author = $data->author;
 $author->id = $data->id;
 
 //Update post
-if($author->id !== null) {
+if($author->update()) {
     echo json_encode(
         array('id' => $author->id,
             'author' => $author->author));
