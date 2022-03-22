@@ -28,7 +28,7 @@ if($quote->update()) {
                 'categoryId' => $quote->categoryId    
         )
     );
-} elseif (!isset($data->categoryId)) {
+} elseif (!isset($quote->categoryId)) {
     echo json_encode(
         array('message' => 'authorId Not found')
     );
