@@ -16,7 +16,7 @@ $quote->id = $data->id;
 $quote->authorId = $data->authorId;
 $quote->categoryId = $data->categoryId;
 
-$isValidAuthor = $isValid($quote->authorId, $quote);
+$isValidAuthor = isValid($quote->authorId, $quote);
 
 if(!$isValidAuthor){
     echo json_encode(array('message' => 'authorId Not Found'));
