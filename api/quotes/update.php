@@ -13,11 +13,11 @@ $data = json_decode(file_get_contents('php://input'));
 
 $data->id = htmlspecialchars(strip_tags($data->id));
 $data->quote = htmlspecialchars(strip_tags($data->quote));
-$data->category = htmlspecialchars(strip_tags($data->category));
-$data->author = htmlspecialchars(strip_tags($data->author));
+$data->categoryId = htmlspecialchars(strip_tags($data->categoryId));
+$data->authorId = htmlspecialchars(strip_tags($data->authorId));
 
 
-if(isset($data->id) && !empty($data->id) && isset($data->quote) && !empty($data->quote) && isset($data->category) && !empty($data->category) && isset($data->author) && !empty($data->author) ){
+if(isset($data->id) && !empty($data->id) && isset($data->quote) && !empty($data->quote) && isset($data->categoryId) && !empty($data->categoryId) && isset($data->authorId) && !empty($data->authorId) ){
     $result = $quote->update();
     echo json_encode($result);
 }else {
