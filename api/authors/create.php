@@ -15,7 +15,7 @@ $author->author = $data->author;
 $author->id = $data->id;
 
 //create post
-$result = $category->create();
+$result = $author->create();
 // echo json_encode($result);
 
 if($result) {
