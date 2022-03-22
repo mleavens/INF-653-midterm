@@ -12,8 +12,8 @@ $quote->read_single();
 $quote_arr = array(
     'id' => $quote->id,
     'quote'=>$quote->quote,
-    'authorId'=>$quote->authorId,
-    'categoryId'=>$quote->categoryId
+    'author'=>$quote->authorId,
+    'category'=>$quote->categoryId
 );
 
 if($quote->id !== null) {
