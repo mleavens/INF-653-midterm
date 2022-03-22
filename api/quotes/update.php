@@ -28,7 +28,7 @@ if($quote->update()) {
                 'categoryId' => $quote->categoryId    
         )
     );
-} else {
+} elseif (!isset($data->quote)) {
     echo json_encode(
         array('message' => 'No Quotes Found')
     );
