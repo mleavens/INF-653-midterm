@@ -16,11 +16,11 @@ $quote->id = $data->id;
 $quote->authorId = $data->authorId;
 $quote->categoryId = $data->categoryId;
 
-$isValidAuthor = isValid($data->authorId, $quote);
+$isValid = isValid($data->id, $quote);
 
 //create post
-if(!$isValidAuthor){
-    echo json_encode(array('message' => 'authorId Not Found'));
+if(!$isValid){
+    echo json_encode(array('message' => 'Missing Required Parameters'));
 }
 
 $result = $quote->create();
