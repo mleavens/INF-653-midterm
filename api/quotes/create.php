@@ -17,20 +17,9 @@ $quote->authorId = $data->authorId;
 $quote->categoryId = $data->categoryId;
 
 //create post
+$result = $quote->create();
+echo json_encode($result);
 
-if($quote->id !== null) {
-    echo json_encode(
-        array(
-            'id' => $db->lastInsertId(),
-            'quote' => $quote->quote,
-            'authorId' => $quote->authorId,
-            'categoryId' => $quote->categoryId
-                );
-} else {
-    echo json_encode(
-        array('message' => 'Missing Required Parameters') 
-    );
-};
 
 
 exit();
