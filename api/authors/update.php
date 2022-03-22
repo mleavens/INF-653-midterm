@@ -11,7 +11,7 @@ $author = new Author($db);
 //get raw posted data
 $data = json_decode(file_get_contents('php://input'));
 
-if(isset($data->id) && !empty($data->id)){
+if(isset($data->id) && !empty($data->id) && isset($data->author) && !empty($data->author) ){
     $result = $author->create();
     echo json_encode($result);
 }else {
