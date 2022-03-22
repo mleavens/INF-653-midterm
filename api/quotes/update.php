@@ -20,10 +20,6 @@ $data->authorId = htmlspecialchars(strip_tags($data->authorId));
 if(isset($data->id) && !empty($data->id) && isset($data->quote) && !empty($data->quote) && isset($data->categoryId) && !empty($data->categoryId) && isset($data->authorId) && !empty($data->authorId)){
     $result = $quote->update();
     echo json_encode($result);
-}elseif(!isset($data->authorId && empty($data->authorId)){
-    echo json_encode(
-        array('message' => 'authorId Not Found') 
-        );
 }else{
     echo json_encode(
         array('message' => 'Missing Required Parameters') 
