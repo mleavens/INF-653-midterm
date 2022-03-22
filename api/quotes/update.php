@@ -21,8 +21,7 @@ $quote->categoryId = $data->categoryId;
 
 //check if quote exists
 $quoteExists = isValid($data->id, $quote);
-$authorIdExists = isValid($data->authorId, $quote);
-$categoryIdExists = isValid($data->categoryId, $quote);
+
 
 
 //update quote
@@ -38,13 +37,6 @@ if($quoteExists) {
     echo json_encode(
         array('message' => 'No Quotes Found')
     );
-} elseif (!$categoryIdExists) {
-    echo json_encode(
-        array('message' => 'authorId Not Found')
-    );
-} elseif (!$categoryIdExists) {
-    echo json_encode(
-        array('message' => 'categoryId Not Found')
-    );
+}
 exit();
 ?>
