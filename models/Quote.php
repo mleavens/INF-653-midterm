@@ -171,9 +171,7 @@ public function delete(){
     
 //execute query
 if($stmt->execute()) {
-    $quote_arr = array(
-        'id' => $this->id);
-    return $quote_arr;
+    return $this->id;
 }else{
     //print error if something goes wrong
     printf('Error: %s.\n', $stmt->error);
