@@ -33,7 +33,7 @@ if($quoteExists) {
                 'categoryId' => $data->categoryId    
         )
     );
-} elseif (!$quoteExists) {
+} else {
     echo json_encode(
         array('message' => 'No Quotes Found')
     );

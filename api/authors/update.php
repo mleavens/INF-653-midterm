@@ -17,8 +17,11 @@ $author->id = $data->id;
 $author->author = $data->author;
 $author->id = $data->id;
 
+
+$authorExists = isValid($author->id, $author);
+
 //Update post
-if($author->id !== null) {
+if($authorExists) {
     echo json_encode(
         array('id' => $author->id,
             'author' => $author->author));
