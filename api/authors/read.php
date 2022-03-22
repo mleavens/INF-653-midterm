@@ -1,14 +1,17 @@
 <?php
 
+$idSet = filter_input(INPUT_GET, "id");
+if ($author->id = isset($idSet)){
+    require_once 'read_single.php'; 
+};
+
+
 //instantiate DB & connect
 $database = new Database();
 $db = $database->connect();
 
 //instantiate author object
 $author = new Author($db);
-if ($author->id = isset($_GET['id'])){
-    require_once 'read_single.php'; 
-};
 
 //author query
 $result = $author->read();
