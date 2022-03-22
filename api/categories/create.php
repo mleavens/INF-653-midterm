@@ -14,7 +14,7 @@ $category->category = $data->category;
 $category->id = $data->id;
 
 
-$result = $category->create()
+$result = $category->create();
 
 //create post
 if($result) {
