@@ -12,8 +12,11 @@ $data = json_decode(file_get_contents('php://input'));
 //Set ID to update
 $quote->id = $data->id;
 
+//See if quote exists
+$quoteExists = isValid($data->id, $quote);
+
 //Delete post
-if($quote->id !== null) {
+if($quoteExists) {
     echo json_encode(
         array('id' =>  $quote->id));
 } else {
