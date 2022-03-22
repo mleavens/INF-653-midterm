@@ -19,7 +19,7 @@ $author_arr = array(
     'author'=>$author->author
 );
 
-if($author->id !== null) {
+if($author->id !== null && $author->author !== null) {
     echo(json_encode($author_arr));
     } 
     else {
