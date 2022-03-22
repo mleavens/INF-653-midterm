@@ -18,13 +18,13 @@ $quote->categoryId = $data->categoryId;
 
 $isValidAuthor = isValid($quote->authorId, $quote);
 
-if(!$isValidAuthor){
-    echo json_encode(array('message' => 'authorId Not Found'));
-}
-
 //create post
 $result = $quote->create();
 echo json_encode($result);
+
+if(!$isValidAuthor){
+    echo json_encode(array('message' => 'authorId Not Found'));
+}
 
 
 
