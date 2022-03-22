@@ -25,7 +25,7 @@ if($author->id !== null) {
     echo json_encode(
         array('message' => 'Missing Required Parameters') 
     );
-}
+};
 
 
 exit();

@@ -77,9 +77,8 @@ public function create() {
         );
         return $author_arr;
     }else {
-        echo json_encode(
-            array('message' => 'Missing Required Parameters') 
-        );
+        printf('Error: %s.\n', $stmt->error);
+        return false;
 }
 
 //UPDATE
