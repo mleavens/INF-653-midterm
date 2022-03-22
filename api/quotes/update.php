@@ -11,20 +11,30 @@ $quote = new Quote($db);
 //get raw posted data
 $data = json_decode(file_get_contents('php://input'));
 
-//Set ID to update
-$quote->id = $data->id;
-
-$quote->quote = $data->quote;
-$quote->id = $data->id;
-$quote->authorId = $data->authorId;
-$quote->categoryId = $data->categoryId;
-
-//check if quote exists
-$quoteExists = isValid($data->id, $quote);
+if(isset($data->id) && !empty($data->id) && isset($data->quote) && !empty($data->quote) ){
+    $result = $quote->create();
+    echo json_encode($result);
+}else {
+    echo json_encode(
+        array('message' => 'Missing Required Parameters') 
+        );
+}
 
 
+// //Set ID to update
+// $quote->id = $data->id;
 
-//update quote
-$result = $quote->update();
-echo json_encode($result);
+// $quote->quote = $data->quote;
+// $quote->id = $data->id;
+// $quote->authorId = $data->authorId;
+// $quote->categoryId = $data->categoryId;
+
+// //check if quote exists
+// $quoteExists = isValid($data->id, $quote);
+
+
+
+// //update quote
+// $result = $quote->update();
+// echo json_encode($result);
 ?>
