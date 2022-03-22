@@ -182,7 +182,6 @@ if($stmt->execute()) {
 
 //categoryIDQuotes
 public function categoryIdQuotes() {
-    
     $query = 'SELECT 
     q.id,
     q.quote,
@@ -205,6 +204,8 @@ public function categoryIdQuotes() {
     $stmt->execute();
     return $stmt;
 }
+}
+
 
 
 
