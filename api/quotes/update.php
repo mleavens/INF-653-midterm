@@ -21,8 +21,8 @@ $quote->categoryId = $data->categoryId;
 
 //check if quote exists
 $quoteExists = isValid($data->id, $quote);
-$authorIdExists = isValid($data->authorId);
-$categoryIdExists = isValid($data->categoryId);
+$authorIdExists = isValid($data->authorId, $quote);
+$categoryIdExists = isValid($data->categoryId, $quote);
 
 
 //update quote
