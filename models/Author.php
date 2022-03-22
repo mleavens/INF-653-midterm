@@ -80,6 +80,8 @@ public function create() {
         printf('Error: %s.\n', $stmt->error);
         return false;
 }
+}
+
 
 //UPDATE
 public function update() {
