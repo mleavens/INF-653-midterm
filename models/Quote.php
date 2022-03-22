@@ -173,7 +173,7 @@ if($stmt->execute()) {
     return $this->id;
 }else{
     //print error if something goes wrong
-    echo('message: ‘No Quotes Found’');
+    printf('Error: %s.\n', $stmt->error);
     return false;
 }
 }
