@@ -104,12 +104,11 @@ public function update() {
 
     //execute query
     if($stmt->execute()) {
-        return true;
-        // $author_arr = array(
-        //     'id' => $this->id, 
-        //     'author' => $this->author
-        // );
-        // return $author_arr;
+        $author_arr = array(
+            'id' => $this->id, 
+            'author' => $this->author
+        );
+        return $author_arr;
     }else{
         //print error if something goes wrong
         printf('Error: %s.\n', $stmt->error);
