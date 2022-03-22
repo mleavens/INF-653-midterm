@@ -16,7 +16,7 @@ $data->categoryId = htmlspecialchars(strip_tags($data->categoryId));
 $data->authorId = htmlspecialchars(strip_tags($data->authorId));
 
 //Check for required parameters
-if(isset($data->id) && !empty($data->id) && isset($data->quote) && !empty($data->quote) && isset($data->categoryId) && !empty($data->categoryId) && isset($data->authorId) && !empty($data->authorId)) {
+if(isset($data->quote) && !empty($data->quote) && isset($data->categoryId) && !empty($data->categoryId) && isset($data->authorId) && !empty($data->authorId)) {
     $result = $quote->create();
     echo json_encode($result);
 }else{
