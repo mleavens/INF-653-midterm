@@ -19,17 +19,5 @@ if(isset($data->id) && !empty($data->id) && isset($data->category) && !empty($da
         );
 }
 
-// //Set ID to update
-// $category->id = $data->id;
 
-// $category->category = $data->category;
-// $category->id = $data->id;
-
-// //check if quote exists
-// $categoryExists = isValid($category->id, $category);
-
-
-// //update category
-// $result = $category->update();
-// echo json_encode($result);
 ?>

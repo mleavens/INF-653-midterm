@@ -20,18 +20,5 @@ if(isset($data->id) && !empty($data->id) && isset($data->author) && !empty($data
         );
 }
 
-//Set ID to update
-// $author->id = $data->id;
-
-// $author->author = $data->author;
-// $author->id = $data->id;
-
-// //check if author exists
-// $authorExists = isValid($author->id, $author);
-
-
-// //Update post
-// $result = $author->update();
-// echo json_encode($result);
 
 // ?>

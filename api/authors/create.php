@@ -21,31 +21,6 @@ if(isset($data->author) && !empty($data->author)){
 }
 
 
-// $author->author = $data->author;
-// $author->id = $data->id;
-
-// if($author->author === null){
-//     echo json_encode(
-//         array('message' => 'Missing Required Parameters') 
-//         );
-// }
-
-// $result = $author->create();
-// echo json_encode($result);
-
-
-//create post
-// $result = $author->create();
-
-
-// if($result) {
-//     echo json_encode($result);
-// } else {
-//     echo json_encode(
-//         array('message' => 'Missing Required Parameters') 
-//     );
-// };
-
 
 exit();
 

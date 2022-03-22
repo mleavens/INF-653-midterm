@@ -1,5 +1,5 @@
 <?php
-require_once '../../function/isValid.php';
+
 
 //instantiate DB & connect
 $database = new Database();
@@ -20,14 +20,6 @@ if(isset($data->quote) && !empty($data->quote) && isset($data->author) && !empty
         array('message' => 'Missing Required Parameters') 
         );
 }
-
-// $isValid = isValid($quote->id, $quote);
-
-// //create post
-// if(!$isValid){
-//     echo json_encode(array('message' => 'Missing Required Parameters'));
-// }
-
 
 
 

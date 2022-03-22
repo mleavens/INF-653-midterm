@@ -20,21 +20,4 @@ if(isset($data->id) && !empty($data->id) && isset($data->quote) && !empty($data-
         );
 }
 
-
-// //Set ID to update
-// $quote->id = $data->id;
-
-// $quote->quote = $data->quote;
-// $quote->id = $data->id;
-// $quote->authorId = $data->authorId;
-// $quote->categoryId = $data->categoryId;
-
-// //check if quote exists
-// $quoteExists = isValid($data->id, $quote);
-
-
-
-// //update quote
-// $result = $quote->update();
-// echo json_encode($result);
 ?>
