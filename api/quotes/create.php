@@ -11,10 +11,15 @@ $quote = new Quote($db);
 //get raw posted data
 $data = json_decode(file_get_contents('php://input'));
 
-$quote->quote= $data->quote;
-$quote->id = $data->id;
-$quote->authorId = $data->authorId;
-$quote->categoryId = $data->categoryId;
+//Check for required parameters
+if(isset($data->author) && !empty($data->author)){
+    $result = $author->create();
+    echo json_encode($result);
+}else {
+    echo json_encode(
+        array('message' => 'Missing Required Parameters') 
+        );
+}
 
 // $isValid = isValid($quote->id, $quote);
 
@@ -22,9 +27,6 @@ $quote->categoryId = $data->categoryId;
 // if(!$isValid){
 //     echo json_encode(array('message' => 'Missing Required Parameters'));
 // }
-
-$result = $quote->create();
-echo json_encode($result);
 
 
 

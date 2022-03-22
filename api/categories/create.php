@@ -10,13 +10,15 @@ $category = new Category($db);
 //get raw posted data
 $data = json_decode(file_get_contents('php://input'));
 
-$category->category = $data->category;
-$category->id = $data->id;
-
-
-//create category
-$result = $category->create();
-echo json_encode($result);
+//check for required parameters
+if(isset($data->author) && !empty($data->author)){
+    $result = $author->create();
+    echo json_encode($result);
+}else {
+    echo json_encode(
+        array('message' => 'Missing Required Parameters') 
+        );
+}
 
 exit();
 ?>
