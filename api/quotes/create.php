@@ -15,6 +15,10 @@ $data = json_decode(file_get_contents('php://input'));
 if(isset($data->quote) && !empty($data->quote) && isset($data->author) && !empty($data->author) && isset($data->category) && !empty($data->category)){
     $result = $quote->create();
     echo json_encode($result);
+}elseif(!isset($data->author) && !empty($data->author){
+    echo json_encode(
+        array('message' => 'authorId Not Found') 
+        );
 }else{
     echo json_encode(
         array('message' => 'Missing Required Parameters') 
