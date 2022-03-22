@@ -14,15 +14,9 @@ $category->category = $data->category;
 $category->id = $data->id;
 
 
+//create category
 $result = $category->create();
+echo json_encode($result);
 
-//create post
-if($result) {
-    echo json_encode($result);
-} else {
-    echo json_encode(
-        array('message' => 'Missing Required Parameters') 
-    );
-}
 exit();
 ?>
