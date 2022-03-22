@@ -180,30 +180,6 @@ if($stmt->execute()) {
 }
 }
 
-//categoryIDQuotes
-public function categoryIdQuotes() {
-    $query = 'SELECT 
-    q.id,
-    q.quote,
-    a.author,
-    c.category
-    From
-    ' . $this->table . ' q
-    LEFT JOIN authors a 
-    ON
-    q.authorId = a.id
-    LEFT JOIN category c
-    ON
-    q.categoryId = c.id
-    WHERE 
-    q.authorId = :authorId';
-
-    // prepare
-    $stmt = $this->conn->prepare($query);
-    $stmt->bindParam(':authorId', $this->authorId);
-    $stmt->execute();
-    return $stmt;
-}
 }
 
 
