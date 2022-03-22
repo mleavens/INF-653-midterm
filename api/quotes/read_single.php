@@ -16,13 +16,6 @@ $quote_arr = array(
     'category'=>$quote->categoryId
 );
 
-if(isset(htmlspecialchars(strip_tags$quote->authorId))){
-    echo json_encode(
-        array('author'=>$quote->authorId,
-                'quote'=> $quote->quote
-    ));
-}
-
 if($quote->id !== null) {
     echo(json_encode($quote_arr));
 } else {
