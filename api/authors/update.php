@@ -11,18 +11,27 @@ $author = new Author($db);
 //get raw posted data
 $data = json_decode(file_get_contents('php://input'));
 
+if(isset($data->id) && !empty($data->id)){
+    $result = $author->create();
+    echo json_encode($result);
+}else {
+    echo json_encode(
+        array('message' => 'Missing Required Parameters') 
+        );
+}
+
 //Set ID to update
-$author->id = $data->id;
+// $author->id = $data->id;
 
-$author->author = $data->author;
-$author->id = $data->id;
+// $author->author = $data->author;
+// $author->id = $data->id;
 
-//check if author exists
-$authorExists = isValid($author->id, $author);
+// //check if author exists
+// $authorExists = isValid($author->id, $author);
 
 
-//Update post
-$result = $author->update();
-echo json_encode($result);
+// //Update post
+// $result = $author->update();
+// echo json_encode($result);
 
-?>
+// ?>
