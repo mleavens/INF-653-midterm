@@ -12,7 +12,7 @@ $quote = new Quote($db);
 $data = json_decode(file_get_contents('php://input'));
 
 //Check for required parameters
-if(isset($data->quote) && !empty($data->quote) && isset($data->author) && !empty($data->author) && isset($data->category) && !empty($data->category)){
+if(isset($data->quote) && !empty($data->quote) && isset($data->authorId) && !empty($data->authorId) && isset($data->categoryId) && !empty($data->categoryId)){
     $result = $quote->create();
     echo json_encode($result);
 }else {
