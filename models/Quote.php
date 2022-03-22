@@ -95,11 +95,12 @@ public function create() {
     $this->categoryId = htmlspecialchars(strip_tags($this->categoryId));
     $this->quote = htmlspecialchars(strip_tags($this->quote));
     $this->authorId = htmlspecialchars(strip_tags($this->authorId));
-
+    $this->id = htmlspecialchars(strip_tags($this->conn->lastInsertId()));
     //bind data
     $stmt->bindParam(':categoryId', $this->categoryId);
     $stmt->bindParam(':quote', $this->quote);
     $stmt->bindParam(':authorId', $this->authorId);
+    $stmt->bindParam(':id' => $this->conn->lastInsertId());
 
     //execute query
     if($stmt->execute()) {

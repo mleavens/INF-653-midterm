@@ -21,9 +21,6 @@ if(isset($data->quote) && !empty($data->quote) && isset($data->author) && !empty
         );
 }
 
-
-
-
 exit();
 
 ?>
