@@ -2,7 +2,7 @@
 
 function isValid($id, $model) {
     $model->id = $id;
-    $modelResult = $model->create();
+    $modelResult = $model->read_single();
     return $modelResult;
 }
 
