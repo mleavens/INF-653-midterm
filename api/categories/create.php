@@ -11,8 +11,8 @@ $category = new Category($db);
 $data = json_decode(file_get_contents('php://input'));
 
 //check for required parameters
-if(isset($data->author) && !empty($data->author)){
-    $result = $author->create();
+if(isset($data->category) && !empty($data->category)){
+    $result = $category->create();
     echo json_encode($result);
 }else {
     echo json_encode(

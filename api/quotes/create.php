@@ -12,8 +12,8 @@ $quote = new Quote($db);
 $data = json_decode(file_get_contents('php://input'));
 
 //Check for required parameters
-if(isset($data->author) && !empty($data->author)){
-    $result = $author->create();
+if(isset($data->quote) && !empty($data->quote)){
+    $result = $quote->create();
     echo json_encode($result);
 }else {
     echo json_encode(
