@@ -16,7 +16,7 @@ $data->id = htmlspecialchars(strip_tags($data->id));
 if(isset($data->id) && !empty($data->id){
     $result = $quote->delete();
     echo json_encode($result);
-}else {
+}else{
     echo json_encode(
         array('message' => 'No Quotes Found') 
         );
