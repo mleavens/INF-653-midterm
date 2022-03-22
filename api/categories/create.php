@@ -13,11 +13,12 @@ $data = json_decode(file_get_contents('php://input'));
 $category->category = $data->category;
 $category->id = $data->id;
 
+
+$result = $category->create()
+
 //create post
-if($category->id !== null) {
-    echo json_encode(
-        array('id' => $db->lastInsertId(),
-            'category' => $category->category));
+if($result) {
+    echo json_encode($result);
 } else {
     echo json_encode(
         array('message' => 'Missing Required Parameters') 

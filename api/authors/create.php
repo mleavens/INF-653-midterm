@@ -17,11 +17,10 @@ $author->id = $data->id;
 //create post
 $result = $author->create();
 
-$authorExists = isValid($author->id, $author);
 
 if($result) {
     echo json_encode($result);
-} elseif (!$authorExists) {
+} else {
     echo json_encode(
         array('message' => 'Missing Required Parameters') 
     );
