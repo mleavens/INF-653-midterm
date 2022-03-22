@@ -18,7 +18,7 @@ $quoteExists = isValid($data->id, $quote);
 //Delete post
 if($quoteExists) {
     echo json_encode(
-        array('id' =>  $quote->id));
+        array('id' =>  $data->id));
 } else {
     echo json_encode(
         array('message' => 'No Quotes Found') 
