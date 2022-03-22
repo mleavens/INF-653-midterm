@@ -27,7 +27,7 @@ if($categoryExists) {
             'category' => $category->category    
         )
     );
-} elseif (!$categoryExists) {
+} elseif (!$data) {
     echo json_encode(
         array('message' => 'Missing Required Parameters')
     );
