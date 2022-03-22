@@ -17,7 +17,7 @@ $category->category = $data->category;
 $category->id = $data->id;
 
 //check if quote exists
-$categoryExists = isValid($data->id, $category);
+$categoryExists = isValid($category->id, $category);
 
 
 //update category
