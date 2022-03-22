@@ -76,6 +76,7 @@ return $stmt;
         $this->quote = $row['quote'];
         $this->id = $row['id'];
 
+        return $stmt;
 
     }
 
