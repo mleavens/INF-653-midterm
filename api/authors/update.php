@@ -12,7 +12,7 @@ $author = new Author($db);
 $data = json_decode(file_get_contents('php://input'));
 
 if(isset($data->id) && !empty($data->id) && isset($data->author) && !empty($data->author) ){
-    $result = $author->create();
+    $result = $author->update();
     echo json_encode($result);
 }else {
     echo json_encode(

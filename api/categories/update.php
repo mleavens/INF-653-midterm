@@ -11,7 +11,7 @@ $category = new Category($db);
 $data = json_decode(file_get_contents('php://input'));
 
 if(isset($data->id) && !empty($data->id) && isset($data->category) && !empty($data->category) ){
-    $result = $category->create();
+    $result = $category->update();
     echo json_encode($result);
 }else {
     echo json_encode(
