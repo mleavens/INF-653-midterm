@@ -17,21 +17,28 @@ $quote->authorId = $data->authorId;
 $quote->categoryId = $data->categoryId;
 
 //create post
-if($quote->create()) {
 
-    echo json_encode(
-
-        array(
-            'id' => $db->lastInsertId(),
-            'quote' => $quote->quote,
-            'authorId' => $quote->authorId,
-            'categoryId' => $quote->categoryId)
-    );
+if($quote->id !== null) {
+    $result = $quote->create();
+    echo json_encode($result);
 } else {
     echo json_encode(
-        array('message' => 'Missing Required Parameters')
+        array('message' => 'Missing Required Parameters') 
     );
-} 
+};
+// if($quote->id !== null) {
+//     echo json_encode(
+//         array(
+//             'id' => $db->lastInsertId(),
+//             'quote' => $quote->quote,
+//             'authorId' => $quote->authorId,
+//             'categoryId' => $quote->categoryId
+//         );
+//     }else{ 
+//     echo json_encode(
+//         array('message' => 'Missing Required Parameters')
+//     );
+// } 
 
 exit();
 
