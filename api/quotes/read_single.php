@@ -12,14 +12,13 @@ $quote->read_single();
 $quote_arr = array(
     'id' => $quote->id,
     'quote'=>$quote->quote,
-    'author'=>$quote->author,
-    'category'=>$quote->category
+    'authorId'=>$quote->authorId,
+    'categoryId'=>$quote->categoryId
 );
 
 if($quote->id !== null) {
     echo(json_encode($quote_arr));
-    } 
-    else {
+} else {
         echo json_encode(
             array('message' => 'No Quotes Found')
         );
