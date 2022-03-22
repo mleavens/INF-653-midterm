@@ -14,19 +14,9 @@ $data = json_decode(file_get_contents('php://input'));
 $author->author = $data->author;
 $author->id = $data->id;
 
-$author_arr = array(
-    'id' => $author->id,
-    'author'=>$author->author
-);
+$result = $category->create();
+echo json_encode($result);
 
-if($author->id !== null && $author->author !== null) {
-    echo(json_encode($author_arr));
-    } 
-    else {
-        echo json_encode(
-            array('message' => 'authorId Not Found')
-        );
-    }
 
 
 //create post
